@@ -13,10 +13,6 @@ class SingleManningRotaTest extends TestCase
     
     public function testBlackWidowWorkMonday()
     {
-        //get blackWidow worker
-        $singleManningRota = new SingleManningRota();
-        $singleManningRota->getWorker('Black','Widow');
-        //get workers on Monday
-        //assert blackWidow works on Monday
+        
     }
 }
