@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class rotasSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class rotasSeeder extends Seeder
     {
        DB::table('rotas')->insert([
          'shop_id'=>1,
-         'week_commence_date'=>date('2022-05-16')
+         'week_commence_date'=>Carbon::create(2022,5,16,0,0,0)->toDateTimeString()
         ]);
     }
 }
