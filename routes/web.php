@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\CustomClass\SingleManningRota;
+use App\CustomClass\Rota;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/custom/{id}', function ($id) {
+    $singleManningRota = new SingleManningRota();
+    $rota = Rota::getRotaById($id);
+    $singleManningRota->setRota($rota);
+    $data['singleMannings'] = $singleManningRota->calculateWeeklySingleManning();
+    return view('singleManning',$data);
 });
